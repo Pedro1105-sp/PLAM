@@ -1,0 +1,83 @@
+<%- include ('partials/header.ejs') %>
+
+<link rel="stylesheet" href="/css/chamada.css">
+
+<body>
+
+  <%- include ('partials/navbarTop.ejs') %>
+
+  <%- include ('navbar.ejs') %>
+
+  <div class="container">
+    <div class="form">
+      <div class="list_dropdown">
+        <h1 class="title-form" >Preencha os campos abaixo:</h1>
+        <!-- <input class="date" type="date"> -->   
+
+        <div class="selector">
+          <div id="selectField" name="selectField" >
+            <p id="selectText">Selecione uma matéria...</p>
+            <div class="caret"></div>
+          </div>
+          <ul id="list" class="hide">
+            <li style="color: var(--gray);" class="options">Selecione a matéria...</li>
+            <li class="options">Banco de dados</li>
+            <li class="options">Programação e Algoritimos</li>
+            <li class="options">Segurança da Informação</li>
+            <li class="options">Programação Web III</li>
+          </ul>
+        </div>
+
+        <div class="selector">
+          <div id="selectField" name="selectField">
+            <p id="selectText">Selecione um módulo...</p>
+            <div class="caret"></div>
+          </div>
+          <ul id="list" class="hide">
+            <li class="options">1° Módulo</li>
+            <li class="options">2° Módulo</li>
+            <li class="options">3° Módulo</li>
+            <li class="options">4° Módulo</li>
+          </ul>
+        </div>
+        
+        <button class="iniciar" type="submit">Iniciar chamada</button>
+
+      </div>
+
+      <div class="attach">
+        <div class="infos-attach">
+          <h2>Anexe um arquivo para contabilizar<br> 
+          a presença de uma forma mais prática!</h2>
+          <div class="attach_file">
+            <input id="file" type="file">
+            <label for="file">
+              <img class="icon-file" src="/img/file.svg" alt="">
+              <span class="upload-file" >Selecione um arquivo...</span>
+            </label>       
+          </div>
+
+          <button class="submit" type="submit">Enviar</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="student">
+      <div class="header-list" >
+        <h1 class="tille-list">Nada para exibir...</h1>
+      </div>
+      <div class="student-list">
+        <img class="boy-img" src="/img/boy.svg" alt="">
+      </div>
+    </div>
+
+  </div>
+  <%- include ('partials/footer.ejs') %>
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/chamada.js"></script>
+</body>
+
+
+</html>

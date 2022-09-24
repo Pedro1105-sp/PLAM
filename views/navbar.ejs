@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de gerenciamento de presença</title>
+
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  
+<body>
+
+  <div class="sidebar">
+
+    <div class="logo_content">
+      <div class="logo">
+        <img src="/img/logo_navbar.svg" id="logo" alt="">
+        <div class="logo_name">P.L.A.M</div>
+        <i class='bx bx-menu' id="btn" ></i>
+      </div>
+    </div>
+    <ul class="nav_list">
+      <li>
+        <i class='bx bx-search'></i>
+        <input type="text" placeholder="Pesquisar...">
+        <span class="type">Pesquisar</span>
+      </li>
+      
+      <li>
+        <a href="/">
+          <i class='bx bx-home-alt-2'></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="type">Home</span>
+        
+      </li>
+
+      <li>
+        <a href="/aluno">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Aluno</span>
+        </a>
+        <span class="type">Aluno</span>
+      </li>
+      
+      <li>
+        <a href="/professor">
+          <i class='bx bx-pencil'></i>
+          <span class="links_name">Professor</span>
+        </a>
+        <span class="type">Professor</span>
+      </li>
+
+      <li>
+        <a href="/chamada">
+          <i class='bx bx-paperclip'></i>
+          <span class="links_name">Chamada</span>
+        </a>
+        <span class="type">Chamada</span>
+      </li>
+
+      <li>
+        <a href="/pendente">
+          <i class='bx bx-loader'></i>
+          <span class="links_name">Pendente</span>
+        </a>
+        <span class="type">Pendente</span>
+      </li>
+
+    </ul>
+
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="/img/people.svg" alt="">
+          <div class="name_user">
+            <div class="name">Larissa Moreira</div>
+          </div>
+        </div>
+
+        <i class='bx bx-log-out' id="log_out"></i>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+<script src="/js/navbar.js"></script>
+
+</html>

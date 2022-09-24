@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teacher-img {
+  position: fixed;
+  left: -290px;
+  top: -366px;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 8rem;
+}
+
+.logo{
+  width: 14rem;
+}
+
+.login {
+  width: 400px;
+  height: 60px;
+  margin-bottom: 1.2rem;
+
+  background: #FFFFFF;
+  border: 1px solid #275975;
+  border-radius: 10px;
+}
+
+label {
+  font-size: 2.2rem;
+  margin-left: 1rem;
+}
+
+.forgot-password{
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit{
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+  width: 18rem  ;
+  height: 4.0rem;
+  color: var(--white);
+  background-color: var(--blue-button);
+  border: none;
+  border-radius: 1.2rem;
+  transition: 0.2s;
+}
+
+.submit:hover{
+  background-color: var(--button-hover);
+}
