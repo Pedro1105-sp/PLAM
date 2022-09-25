@@ -3,11 +3,12 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 7.8rem;
+  width: 7rem;
+  /* width: 5%; */
   background: var(--blue-dark);
   padding: 0.6rem 1.4rem;
   transition: all 0.5s ease;
-  
+  align-items: center;
 }
 
 .sidebar.active{
@@ -19,10 +20,7 @@
   color: var(--white);
   display: flex;
   height: 5rem;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-
+  width: 74%;
 }
 
 .sidebar .logo_content #logo{

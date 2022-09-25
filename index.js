@@ -4,11 +4,11 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
 
-app.get("/login", (req, res) =>{
+app.get("/", (req, res) =>{
   res.render("login");
 });
 
-app.get("/", (req, res) =>{
+app.get("/home_prof", (req, res) =>{
   res.render("index");
 });
 
@@ -25,6 +25,10 @@ app.get("/chamada", (req, res) =>{
 
 app.get("/pendente", (req, res) =>{
   res.render("pendente");
+});
+
+app.get("/home_secretaria", (req, res) =>{
+  res.render("home");
 });
 
 app.listen(8070, () =>{
