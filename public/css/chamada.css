@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 3rem;
+  padding: 3rem 0;
 }
 
 .list_dropdown{
@@ -232,4 +232,60 @@ input[type="file"]{
 .boy-img{
   padding-left: 3rem;
   height: 75vh;
+}
+
+.modal-container{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.mostrar{
+  display: flex;
+}
+
+.modal{
+  background-color: white;
+  width: 110rem;
+  height: 55rem;
+  padding: 4rem;
+  border: 1rem solid var(--blue-light);
+  position: relative;
+}
+
+@keyframes modal{
+  from{
+    opacity: 0;
+    transform: translate3d(0, -6rem, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.mostrar .modal{
+  animation: modal .3s;
+}
+
+.fechar{
+  position: absolute;
+  font-size: 2em;
+  top: -3rem;
+  right: -3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.4rem solid white;
+  background-color: var(--blue-light);
+  color: white;
+  cursor: pointer;
+
 }

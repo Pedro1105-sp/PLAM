@@ -5,8 +5,8 @@
 <body>
 
   <%- include ('partials/navbarTop.ejs') %>
+  <%- include('partials/navbar.ejs') %>
 
-  <%- include ('navbar.ejs') %>
 
   <div class="container">
     <div class="form">
@@ -73,6 +73,21 @@
     </div>
 
   </div>
+
+  <div id="modal-chamada" class="modal-container">
+    <div class="modal">
+      <button class="fechar">x</button>
+      <h2>Chamada 30/09</h2>
+      <form action="">
+        <div>
+          <p>Marina Lucas Martins</p>
+          <input type="checkbox"  checked>
+        </div>
+        <input type="button" class="button" value="Concluir">
+      </form>
+    </div>
+  </div>
+
   <%- include ('partials/footer.ejs') %>
 
   <script src="/js/jquery.js"></script>

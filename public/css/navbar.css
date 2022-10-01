@@ -9,11 +9,11 @@
   padding: 0.6rem 1.4rem;
   transition: all 0.5s ease;
   align-items: center;
+  z-index: 2000;
 }
 
 .sidebar.active{
   width: 24rem;
-  
 }
 
 .sidebar .logo_content .logo{
@@ -184,6 +184,7 @@
 .sidebar.active .links_name{
   opacity: 1;
   pointer-events: auto;
+  transition: all 1s ease;
 }
 
 .sidebar .profile_content{
@@ -207,6 +208,7 @@
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
+  transition: all 1s ease;
 }
 
 .sidebar.active .profile .profile_details{
@@ -222,7 +224,7 @@
 }
 
 .profile .profile_details .name_user{
-  margin-left: 7rem;
+  margin-left: 1rem;
 }
 
 .profile .profile_details .name{

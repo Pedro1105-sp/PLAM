@@ -111,31 +111,31 @@ a .name_logo{
 /* ----- footer ------ */
 
 footer{
-  
-  position: absolute;
+  position: relative;
   margin-top: 2rem;
   bottom: 0%;
-  margin-top: 50%;
-  width: 95.2%;
+  width: 95.5%;
   background-color: var(--blue-dark);
-  margin-left: 4.8%;
+  margin-left: 4.5%;
 }
 
 .list-creators{
   width: 100%;
-  padding: 2rem 8rem 1.7rem 0;    
+  padding: 2rem;    
   display: flex;
-  justify-content: space-evenly;
+  padding-right: 5rem;
+  justify-content: space-between;
 }
 
 .creators{
   font-size: 1.5rem;
   color: var(--white);
+  padding-left: 0;
 }
 
 .name-creator{
   color: var(--blue);
-  margin-left: 4.6rem;
+  margin-left: 2rem;
   font-size: 1.6rem ;
 }
 
