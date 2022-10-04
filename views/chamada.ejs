@@ -77,14 +77,28 @@
   <div id="modal-chamada" class="modal-container">
     <div class="modal">
       <button class="fechar">x</button>
-      <h2>Chamada 30/09</h2>
-      <form action="">
-        <div>
-          <p>Marina Lucas Martins</p>
-          <input type="checkbox"  checked>
-        </div>
+
+      <div class="call_button">
+        <h2>Chamada 30/09</h2>
         <input type="button" class="button" value="Concluir">
-      </form>
+      </div>
+
+      <section class="infos">
+        <div class="info_student ">
+          <p class="item">RM</p>
+          <p class="item">Nome</p>
+          <p class="item">Presente</p>
+        </div>
+
+        <%  alunos.forEach(alunos => { %>
+          <div class="info_student">
+            <p class="item" ><%= alunos.rm %></p>
+            <p class="item" ><%= alunos.nm_aluno %></p>
+            <p class="item"><input type="checkbox"  checked></p>
+          </div>
+        <% }) %>
+
+      </section>
     </div>
   </div>
 
