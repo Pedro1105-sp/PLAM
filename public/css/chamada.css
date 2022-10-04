@@ -292,16 +292,21 @@ input[type="file"]{
 
 }
 
+/* .infos{
+  outline: 1px solid #000;
+  border-radius: 1rem;
+} */
+
 .call_button{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
 .button{
   cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1.4rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
   color: var(--white);
   background-color: var(--blue-button);
   border: none;
@@ -316,14 +321,26 @@ input[type="file"]{
 .item{
   display: flex;
   align-items: center;
-  border: 1px solid #000;
-  padding: 0.2rem;
+	outline: 1px solid gray; /* The outline creates the border */
+	position: relative;
+	z-index: 1; /* original z-index */
+  padding-left: 1rem;
+}
+
+
+#rm{
+  border-top-left-radius: 1rem;
+}
+
+#presence{
+  border-top-right-radius: 1rem;
 }
 
 .info_student{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 4vh;
   font-size: 1.3rem;
+  grid-gap: 0.1rem;
 
 }

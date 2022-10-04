@@ -85,20 +85,20 @@
 
       <section class="infos">
         <div class="info_student ">
-          <p class="item">RM</p>
-          <p class="item">Nome</p>
-          <p class="item">Presente</p>
+          <p class="item" id="rm">RM</p>
+          <p class="item name" id="name">Nome</p>
+          <p class="item" id="presence">Presente</p>
         </div>
 
         <%  alunos.forEach(alunos => { %>
           <div class="info_student">
-            <p class="item" ><%= alunos.rm %></p>
-            <p class="item" ><%= alunos.nm_aluno %></p>
+            <p class="item" id="rm_student"><%= alunos.rm %></p>
+            <p class="item" id="name_student"><%= alunos.nm_aluno %></p>
             <p class="item"><input type="checkbox"  checked></p>
           </div>
         <% }) %>
-
       </section>
+
     </div>
   </div>
 

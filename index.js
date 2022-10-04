@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 const moment = require('moment');
 const alunoController = require('./controller/AlunoController');
 const app = express();
+const professorController = require("./controller/ProfessorController");
+const cursoController = require("./controller/CursoController");
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
@@ -12,6 +15,10 @@ app.use(bodyParser.json());
 app.use(express.text())
 
 app.use("/", alunoController);
+
+app.use("/", cursoController);
+
+app.use("/", professorController);
 
 app.get("/login", (req, res) =>{
   res.render("login");
@@ -23,9 +30,6 @@ app.get("/home", (req, res) =>{
 
 app.get("/aluno", (req, res) =>{
   res.render("aluno");
-});
-app.get("/professor", (req, res) =>{
-  res.render("professor");
 });
 
 app.get("/chamada", (req, res) =>{
