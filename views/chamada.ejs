@@ -46,7 +46,6 @@
       </div>
 
       <div class="attach">
-        <div class="infos-attach">
           <h2>Anexe um arquivo para contabilizar<br> 
           a presença de uma forma mais prática!</h2>
           <div class="attach_file">
@@ -57,9 +56,9 @@
             </label>       
           </div>
 
-          <button class="submit" type="submit">Enviar</button>
-
-        </div>
+          <div class="button_submit">
+            <button class="submit" type="submit">Enviar</button>
+          </div>
       </div>
     </div>
 
@@ -97,7 +96,10 @@
           <div class="info_student">
             <p class="item" id="rm_student"><%= alunos.rm %></p>
             <p class="item" id="name_student"><%= alunos.nm_aluno %></p>
-            <p class="item"><input type="checkbox"></p>
+            <p class="item">
+              <input type="checkbox" id="checkbox" class="checkbox">
+              <!-- <label for="checkbox" class="label"></label> -->
+            </p>
           </div>
         <% }) %>
       </section>

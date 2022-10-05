@@ -1,17 +1,18 @@
-
-.container{
-  display: flex;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   align-items: center;
-  justify-content: space-evenly;
   padding: 3rem 0;
 }
 
-.list_dropdown{
+.list_dropdown {
   box-shadow: 0px 0px 10px 0px #00000040;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-rows: 3fr 3fr 3fr;
+  grid-template-columns: 1fr;
   align-items: center;
+  justify-items: center;
   padding-top: 2rem;
   border-radius: 1.2rem 1.2rem 0 0;
   height: 45vh;
@@ -19,16 +20,16 @@
   background: var(--blue-medium);
 }
 
-.form{
+.form {
   padding-left: 8rem;
 }
 
-.title-form{
+.title-form {
   color: var(--white);
-  font-size: 2rem;
+  font-size: 2.8rem;
 }
 
-.date{
+.date {
   border: none;
   cursor: pointer;
   color: #A1A1A1;
@@ -39,18 +40,18 @@
   box-shadow: 0px 0px 10px 0px #00000040;
 }
 
-::-webkit-calendar-picker-indicator{
+::-webkit-calendar-picker-indicator {
   color: #A1A1A1;
 }
 
-.selector{
+.selector {
   box-sizing: border-box;
   width: 90%;
 }
 
-#selectField{
+#selectField {
   cursor: pointer;
-  height: 4.5rem;
+  height: 5rem;
   padding: 0.3rem 1.5rem 0 2.0rem;
   color: #A1A1A1;
   font-size: 1.3rem;
@@ -62,7 +63,7 @@
   box-shadow: 0px 0px 10px 0px #00000040;
 }
 
-.caret{
+.caret {
   width: 0;
   height: 0;
   border-left: 0.5rem solid transparent;
@@ -71,18 +72,18 @@
   transition: 0.2s;
 }
 
-#list::-webkit-scrollbar{
+#list::-webkit-scrollbar {
   width: 0.5rem;
   border: none;
 }
 
-#list::-webkit-scrollbar-thumb{
+#list::-webkit-scrollbar-thumb {
   width: 0.8rem;
   background-color: var(--blue-dark);
   border-radius: 1.2rem;
 }
 
-#list{
+#list {
   position: absolute;
   overflow-y: scroll;
   font-size: 1.3rem;
@@ -93,7 +94,7 @@
   transition: 0.1s;
 }
 
-.options{
+.options {
   border-radius: 1.2rem;
   border: solid 0.1rem #e6eef2;
   cursor: pointer;
@@ -103,24 +104,26 @@
   padding: 1.2rem 2.0rem;
 }
 
-.options:hover{
+.options:hover {
   border-radius: 1.2rem;
   background-color: #CDE0FD;
 }
 
-.hide{
+.hide {
   transform: translateY(-10%);
   display: none;
   visibility: hidden;
 }
 
-.rotate{
+.rotate {
   transform: rotate(180deg);
 }
 
-.attach{
+.attach {
+  display: grid;
+  justify-items: center;
+  align-items: center;
   text-align: center;
-  padding-top: 2rem;
   border-radius: 0 0 1.2rem 1.2rem;
   height: 45vh;
   width: 43vw;
@@ -128,21 +131,15 @@
   box-shadow: 0px 0px 10px 0px #00000040;
 }
 
-.infos-attach{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-h2{
+h2 {
   font-weight: 600;
   font-size: 1.8rem;
 }
 
-.attach_file{
+.attach_file {
   display: flex;
   align-items: center;
-  margin: 3rem 0 2rem 0;
+  /* margin: 3rem 0 2rem 0; */
   width: 90%;
   height: 5.0rem;
   padding: 0.3rem 1.5rem 0 2.0rem;
@@ -153,24 +150,30 @@ h2{
   box-shadow: 0px 0px 10px 0px #00000040;
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
 }
 
-.icon-file{
+.icon-file {
   width: 2rem;
   cursor: pointer;
 }
 
-.upload-file{
+.upload-file {
   cursor: pointer;
   margin-left: 2rem;
 }
 
-.submit{
+.button_submit {
+  display: flex;
+  justify-content: center;
+  width: 43vw;
+}
+
+.submit {
   cursor: pointer;
   font-size: 1.8rem;
-  margin-top: 2rem;
+  padding: 0 2rem;
   width: 30%;
   height: 4.0rem;
   color: var(--white);
@@ -180,15 +183,15 @@ input[type="file"]{
   transition: 0.2s;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: var(--button-hover);
 }
 
-.iniciar{
+.iniciar {
   cursor: pointer;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  width: 30%;
+  padding: 0 1rem;
   height: 4.0rem;
   color: var(--white);
   background-color: var(--blue-button);
@@ -197,47 +200,47 @@ input[type="file"]{
   transition: 0.2s;
 }
 
-.iniciar:hover{
+.iniciar:hover {
   background-color: var(--button-hover);
 }
 
-.student{
+.student {
   width: 43vw;
   margin-left: 3rem;
 }
 
-.header-list{
+.header-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   box-shadow: 0px 0px 10px 0px #00000040;
   text-align: center;
-  border-radius: 1.2rem 1.2rem 0 0 ;
+  border-radius: 1.2rem 1.2rem 0 0;
   background-color: var(--blue-medium);
   width: 100%;
   height: 11vh;
 }
 
-.tille-list{
+.tille-list {
   font-size: 2.5rem;
   color: var(--white);
 }
 
-.student-list{
+.student-list {
   width: 43vw;
   height: 79vh;
   background-color: var(--blue-light);
-  border-radius: 0 0 1.2rem 1.2rem ;
+  border-radius: 0 0 1.2rem 1.2rem;
   box-shadow: 1px 1px 10px 0px #00000040;
 }
 
-.boy-img{
+.boy-img {
   padding-left: 3rem;
   height: 75vh;
 }
 
-.modal-container{
+.modal-container {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -250,11 +253,11 @@ input[type="file"]{
   align-items: center;
 }
 
-.modal-container.mostrar{
+.modal-container.mostrar {
   display: flex;
 }
 
-.modal{
+.modal {
   background-color: var(--background-modal);
   width: 110rem;
   height: 55rem;
@@ -267,22 +270,23 @@ input[type="file"]{
 }
 
 
-@keyframes modal{
-  from{
+@keyframes modal {
+  from {
     opacity: 0;
     transform: translate3d(0, -6rem, 0);
   }
-  to{
+
+  to {
     opacity: 1;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.mostrar .modal{
+.mostrar .modal {
   animation: modal .3s;
 }
 
-.fechar{
+.fechar {
   position: absolute;
   font-size: 2em;
   top: -3rem;
@@ -302,13 +306,13 @@ input[type="file"]{
   border-radius: 1rem;
 } */
 
-.call_button{
+.call_button {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
 }
 
-.button{
+.button {
   cursor: pointer;
   padding: 0.8rem;
   font-size: 1.2rem;
@@ -319,33 +323,85 @@ input[type="file"]{
   transition: 0.2s;
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--button-hover);
 }
 
-.item{
+.item {
   display: flex;
   align-items: center;
-	outline: 1px solid gray; /* The outline creates the border */
-	position: relative;
-	z-index: 1; /* original z-index */
+  outline: 1px solid gray;
+  /* The outline creates the border */
+  position: relative;
+  z-index: 1;
+  /* original z-index */
   padding-left: 1rem;
 }
 
+.checkbox{
+  border-radius: 0.5rem;
+  height: 1.8rem;
+  width: 1.8rem;
+}
 
-#rm{
+/* -------- CHECKBOX --------- */
+
+/* .checkbox {
+	position: absolute;
+	left: -9999px;
+}
+
+
+.label{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.label:before{
+  content: '';
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  display: inline-block;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.label:after {
+	color: #2ecc71;
+	content: '\2713';
+	display: inline-block;
+  left: 0.5rem;
+  font-weight: 900;
+	position: absolute;
+	transform: scale(0);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label:after {
+	transform: scale(1);
+} */
+
+
+#rm {
   border-top-left-radius: 1rem;
 }
 
-#presence{
+#presence {
   border-top-right-radius: 1rem;
 }
 
-.info_student{
+.info_student {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 4vh;
   font-size: 1.3rem;
   grid-gap: 0.1rem;
 
+}
+
+.info_student:hover {
+  background-color: #5F5F5F;
 }

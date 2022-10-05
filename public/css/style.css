@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
 
-html{
+html {
   --blue-dark: #1d1b31;
   --background-modal: #343434;
   --blue-search: #253368;
@@ -21,29 +21,30 @@ html{
   --border-dropdown: #CDE0FD;
   /* 1rem = 16px (user agent)  = 100% (user agent */
 
-  font-size: 62.5%; /* 10px */
+  font-size: 62.5%;
+  /* 10px */
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body{  
+body {
   /*margin-left: 7.8rem;*/
   min-height: 100vh;
   width: 100%;
   background-color: var(--background);
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   width: 0.5rem;
   border: none;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
   width: 1rem;
   background-color: var(--blue-dark);
   border-radius: 1.2rem;
@@ -51,7 +52,7 @@ body::-webkit-scrollbar-thumb{
 
 /* ------ navbar Top -----*/
 
-.navbar_home{
+.navbar_home {
   top: 0;
   display: flex;
   align-items: center;
@@ -63,7 +64,7 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,17 +75,17 @@ body::-webkit-scrollbar-thumb{
   color: black;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-a .name_logo{
+a .name_logo {
   margin-left: 1rem;
 }
 
-.logo_home{
+.logo_home {
   display: flex;
-  
+
   justify-content: center;
   margin-left: 8rem;
   width: 4rem;
@@ -111,7 +112,7 @@ a .name_logo{
 
 /* ----- footer ------ */
 
-footer{
+footer {
   position: relative;
   margin-top: 2rem;
   bottom: 0%;
@@ -120,33 +121,33 @@ footer{
   margin-left: 3.6%;
 }
 
-.list-creators{
+.list-creators {
   width: 100%;
-  padding: 2rem;    
+  padding: 2rem;
   display: flex;
   padding-right: 5rem;
   justify-content: space-between;
 }
 
-.creators{
+.creators {
   font-size: 1.5rem;
   color: var(--white);
   padding-left: 0;
 }
 
-.name-creator{
+.name-creator {
   color: var(--blue);
   margin-left: 2rem;
-  font-size: 1.6rem ;
+  font-size: 1.6rem;
 }
 
-.link-github{
+.link-github {
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-.icon-github{
+.icon-github {
   display: flex;
   align-items: center;
 }
