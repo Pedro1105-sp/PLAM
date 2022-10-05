@@ -1,10 +1,60 @@
 <%- include ('partials/header.ejs') %>
 
-<%- include ('partials/navbarTop.ejs') %>
+<link rel="stylesheet" href="/css/aluno.css" />
 
-<%- include ('partials/navbar.ejs') %>
+<body>
+    <%- include ('partials/navbarTop.ejs') %>
+    <%- include ('partials/navbar.ejs')%>
 
+    <div class="container">
+        <div class="form">
+            <div class="list_dropdown">
+                <h1 class="title-form">Preencha os campos abaixo:</h1>
 
+                <div class="selector">
+                    <div id="selectField" name="selectField">
+                        <p id="selectText">Selecione uma matéria...</p>
+                        <div class="caret"></div>
+                    </div>
+                    <ul id="list" class="hide">
+                        <li class="options">1° Módulo</li>
+                        <li class="options">2° Módulo</li>
+                        <li class="options">3° Módulo</li>
+                        <li class="options">4° Módulo</li>
+                    </ul>
+                </div>
 
+                <div class="selector">
+                    <div id="selectField" name="selectField">
+                        <p id="selectText">Selecione um módulo...</p>
+                        <div class="caret"></div>
+                    </div>
+                    <ul id="list" class="hide">
+                        <li style="color: var(--gray)" class="options">
+                        Selecione a matéria...
+                        </li>
+                        <li class="options">Banco de dados</li>
+                        <li class="options">Programação e Algoritimos</li>
+                        <li class="options">Segurança da Informação</li>
+                        <li class="options">Programação Web III</li>
+                    </ul>    
+                </div>
+            </div>
 
-<%- include ('partials/footer.ejs') %>
+            <button class="submit" type="submit">Iniciar chamada</button>
+        </div>
+
+        <div class="student">
+            <div class="header-list" >
+                <input class="search-student" >
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="student-list">
+                <h2>xablau</h2>
+            </div>
+        </div>
+
+  </div>
+
+  <%- include ('partials/footer.ejs') %>
+</body>

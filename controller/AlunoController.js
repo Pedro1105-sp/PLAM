@@ -12,6 +12,10 @@ router.get('/chamada', (req, res) =>{
 
 });
 
+router.get('/aluno', (req, res) =>{
+    res.render("aluno");
+});
+
 router.post('/inserirAluno', (req, res)=>{
 
   let {rm, nm_aluno} = req.body;

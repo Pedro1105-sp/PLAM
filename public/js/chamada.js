@@ -33,7 +33,7 @@ function iniciaModal (modalID) {
   }
 }
 
-// const iniciarChamada = document.querySelector('.iniciar');
-//iniciarChamada.addEventListener('click', () => iniciaModal('modal-chamada'));
+const iniciarChamada = document.querySelector('.iniciar');
+iniciarChamada.addEventListener('click', () => iniciaModal('modal-chamada'));
 
-iniciaModal('modal-chamada');
+// iniciaModal('modal-chamada');

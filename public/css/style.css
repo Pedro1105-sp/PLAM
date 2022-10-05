@@ -2,6 +2,7 @@
 
 html{
   --blue-dark: #1d1b31;
+  --background-modal: #343434;
   --blue-search: #253368;
   --background: #F8FDFF;
   --white: #fff;
@@ -114,9 +115,9 @@ footer{
   position: relative;
   margin-top: 2rem;
   bottom: 0%;
-  width: 95.5%;
+  width: 96.4%;
   background-color: var(--blue-dark);
-  margin-left: 4.5%;
+  margin-left: 3.6%;
 }
 
 .list-creators{

@@ -12,7 +12,7 @@
     <div class="form">
       <div class="list_dropdown">
         <h1 class="title-form" >Preencha os campos abaixo:</h1>
-        <!-- <input class="date" type="date"> -->   
+  
 
         <div class="selector">
           <div id="selectField" name="selectField" >
@@ -66,6 +66,7 @@
     <div class="student">
       <div class="header-list" >
         <h1 class="tille-list">Nada para exibir...</h1>
+        <input class="date" type="date"> 
       </div>
       <div class="student-list">
         <img class="boy-img" src="/img/boy.svg" alt="">
@@ -81,6 +82,8 @@
       <div class="call_button">
         <h2>Chamada 30/09</h2>
         <input type="button" class="button" value="Concluir">
+        <!-- <input type="button" class="button red" value="Concluir"> -->
+        
       </div>
 
       <section class="infos">
@@ -94,7 +97,7 @@
           <div class="info_student">
             <p class="item" id="rm_student"><%= alunos.rm %></p>
             <p class="item" id="name_student"><%= alunos.nm_aluno %></p>
-            <p class="item"><input type="checkbox"  checked></p>
+            <p class="item"><input type="checkbox"></p>
           </div>
         <% }) %>
       </section>

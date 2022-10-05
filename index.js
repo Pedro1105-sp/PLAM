@@ -28,10 +28,6 @@ app.get("/home", (req, res) =>{
   res.render("index");
 });
 
-app.get("/aluno", (req, res) =>{
-  res.render("aluno");
-});
-
 app.get("/chamada", (req, res) =>{
   res.render("chamada");
 });
