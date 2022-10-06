@@ -344,47 +344,6 @@ input[type="file"] {
   width: 1.8rem;
 }
 
-/* -------- CHECKBOX --------- */
-
-/* .checkbox {
-	position: absolute;
-	left: -9999px;
-}
-
-
-.label{
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.label:before{
-  content: '';
-  background-color: var(--white);
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  display: inline-block;
-  height: 1.8rem;
-  width: 1.8rem;
-}
-
-.label:after {
-	color: #2ecc71;
-	content: '\2713';
-	display: inline-block;
-  left: 0.5rem;
-  font-weight: 900;
-	position: absolute;
-	transform: scale(0);
-	transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .label:after {
-	transform: scale(1);
-} */
-
-
 #rm {
   border-top-left-radius: 1rem;
 }
