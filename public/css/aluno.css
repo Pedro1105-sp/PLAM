@@ -296,8 +296,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-gap: 2.5rem;
   justify-items: center;
   align-items: center;
+  
 }
 
 
@@ -320,8 +322,9 @@
 }
 
 .infos-student > div{
+  text-align: center;
   margin: 0.5rem 0;
-  width: 22vw;
+  width: 26vw;
   height: 4.3rem;
   background: #5F5F5F;
   border-radius: 10px;
