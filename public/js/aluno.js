@@ -35,7 +35,7 @@ function iniciaModal (modalID) {
   }
 }
 
-const iniciarChamada = document.querySelector('.submit');
+const iniciarChamada = document.querySelector('#student');
 iniciarChamada.addEventListener('click', () => iniciaModal('modal-chamada'));
 
 // iniciaModal('modal-chamada');
@@ -49,7 +49,7 @@ var charGraph = new Chart(ctx, {
   data : {
     datasets: [{
       label: 'My First Dataset',
-      data: [300, 50],
+      data: [100, 75],
       backgroundColor: [
         'rgba(0, 148, 255, 1)',
         'rgba(215, 215, 215, 1)'

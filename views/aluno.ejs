@@ -65,7 +65,17 @@
                 </div>
             </div>
             <div class="student-list">
-
+                <div class="list-name">
+                    <div>
+                        <p class="rm-student">RM</p>
+                        <p class="name-student">Nome</p>
+                    </div>
+    
+                    <div id="student">
+                        <p id="rm-student">153864</p>
+                        <p id="name-student">Pedro Henrique Alves Candido da Silva</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -76,61 +86,63 @@
             <button class="fechar">x</button>
 
             <section class="informations_student">
-                <div class="calendar">
-                    <%- include ('partials/calendar.ejs') %>
-                </div>
+                <div>
+                    <div class="calendar">
+                        <%- include ('partials/calendar.ejs') %>
+                    </div>
+        
+                    <div class="img-student">
+                        <img src="/img/imgAluno.svg" alt="">
+                    </div>
     
-                <div class="img-student">
-                    <img src="/img/imgAluno.svg" alt="">
-                </div>
-
-                <div class="infos-student">
-                    <div class="">
-                        Nome:
-                        <span>Pedro Henrique Alves Candido da Silva</span>
+                    <div class="infos-student">
+                        <div class="">
+                            Nome:
+                            <span>Pedro Henrique Alves Candido da Silva</span>
+                        </div>
+                        
+                        <div class="">
+                            RM:
+                            <span>123456</span>
+                        </div>
+    
+                        <div class="">
+                            Curso:
+                            <span>Desenvolvimento de sistemas</span>
+                        </div>
+    
+                        <div class="">
+                            Módulo:
+                            <span>3°</span>
+                        </div>
                     </div>
-                    
-                    <div class="">
-                        RM:
-                        <span>123456</span>
+    
+                    <div class="infos-classes">
+                        <div class="classes">
+                            Total de faltas:
+                            <span>5</span>
+                        </div>
+                        <div class="classes">
+                            Faltas permitidas:
+                            <span>5</span>
+                        </div>
+                        <div class="classes">
+                            Quantidades de aulas:
+                            <span>5</span>
+                        </div>
+                        <div class="classes">
+                            Quantidades de aulas:
+                            <span>5</span>
+                        </div>
                     </div>
-
-                    <div class="">
-                        Curso:
-                        <span>Desenvolvimento de sistemas</span>
+    
+                    <div class="graph">
+                        <canvas class="doughnut"></canvas>
                     </div>
-
-                    <div class="">
-                        Módulo:
-                        <span>3°</span>
+    
+                    <div class="img-student">
+                        <h2>IMAGEM ALEATORIA</h2>
                     </div>
-                </div>
-
-                <div class="infos-classes">
-                    <div class="classes">
-                        Total de faltas:
-                        <span>5</span>
-                    </div>
-                    <div class="classes">
-                        Faltas permitidas:
-                        <span>5</span>
-                    </div>
-                    <div class="classes">
-                        Quantidades de aulas:
-                        <span>5</span>
-                    </div>
-                    <div class="classes">
-                        Quantidades de aulas:
-                        <span>5</span>
-                    </div>
-                </div>
-
-                <div class="graph">
-                    <canvas class="doughnut"></canvas>
-                </div>
-
-                <div class="img-student">
-                    <h2>IMAGEM ALEATORIA</h2>
                 </div>
 
             </section>

@@ -1,3 +1,7 @@
+body{
+  overflow-y: hidden;
+
+}
 
 .welcome{
   margin: 2rem 0 0 8rem;
@@ -8,14 +12,22 @@
 
 main{
   padding: 3rem 3rem 0 3rem;
-  margin-bottom: 22.38rem;
+  height: 100%;
+  /* margin-bottom: 22.38rem; */
 }
 
-.lindinha{
+.container{
   margin-left: 7.8rem; 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2.94fr;
+
+  grid-template-areas: 
+  "a a a"
+  "div div div";
+  grid-gap: 2rem;
+  grid-column-gap: 6rem;
+
 }
 
 .shortcut{
@@ -24,10 +36,10 @@ main{
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
 
+  grid-area: a;
   height: 14rem;
-  width: 26rem;
+  width: 100%;
   box-shadow: 0px 0px 10px 0px #00000040;
   border-radius: 1rem;
 
@@ -46,4 +58,14 @@ main{
 .shortcut:hover{
   background-color: var(--blue-medium);
   color: var(--white);
+}
+
+.container > div {
+  height: 80%;
+  width: 100%;
+  margin-top: 4rem;
+
+  border-radius: 1rem;
+  background-color: var(--blue-medium);
+  grid-area: div;
 }
