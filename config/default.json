@@ -1,0 +1,15 @@
+{
+    "mysql":{
+        "banco-de-dados": "BD_TCC",
+        "usuario": "root",
+        "senha": "",
+        "host": "localhost",
+        "port": 3306
+
+    },
+    "api": {
+        "porta":3000,
+        "msg": "Site em execução",
+        "caminho" :"http://localhost"
+    }
+}
