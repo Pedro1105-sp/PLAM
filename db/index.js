@@ -31,6 +31,29 @@ async function selectTb() {
     }
 };
 
+async function selectTbAluno() {
+    try {
+        const conn = await connect();
+        let consulta = `SELECT * FROM bd_tcc.tb_alunos;`;
+        const [rows] = await conn.query(consulta);
+        return await rows;
+    } catch (erro) {
+        return erro;
+    }
+};
+
+
+async function selectTbDiscilina() {
+    try {
+        const conn = await connect();
+        let consulta = `SELECT * FROM bd_tcc.tb_disciplinas;`;
+        const [rows] = await conn.query(consulta);
+        return await rows;
+    } catch (erro) {
+        return erro;
+    }
+};
+
 
 function isEmpty(obj) {
     for(var prop in obj) {
@@ -47,7 +70,7 @@ async function insertTb(dados){
         }
         else {
             const conn = await connect();
-            const query = `insert into tb_professores (rm_professor, nm_professor, cpf_professor, tel_professor) values (?, ?, ?, ?)`;
+            const query = `insert into tb_professores (rm_professor, nm_professor, cpf_professor, tel_professor) values (?, ?, ?, ?);`;
             const values = [dados.rm_professor, dados.nm_professor, dados.cpf_professor, dados.tel_professor];
             await conn.query(query, values);
             return ['DADOS INSERIDO NO BANCO DE DADOS'];
@@ -58,4 +81,22 @@ async function insertTb(dados){
     }
 }
 
-module.exports = {selectTb, insertTb};
+async function insertTbAluno(dados){
+    try {
+        if(isEmpty(dados)) {
+            return ['ERRO AO INSERIR, DADOS NULO'];
+        }
+        else {
+            const conn = await connect();
+            const query = `insert into tb_alunos (rm, nm_aluno, cpf_aluno, tel_aluno, id_turma_aluno) values (?, ?, ?, ?, ?);`;
+            const values = [dados.rm, dados.nm_aluno, dados.cpf_aluno, dados.tel_aluno, dados.id_turma_aluno];
+            await conn.query(query, values);
+            return ['DADOS INSERIDO NO BANCO DE DADOS'];
+        }
+    } catch (erro) {
+        console.log("NÃO FOI POSSÍVEL INSERIR AO BANCO DE DADOS", erro)
+        return erro;
+    }
+}
+
+module.exports = {selectTb, insertTb, selectTbDiscilina, insertTbAluno, selectTbAluno};
