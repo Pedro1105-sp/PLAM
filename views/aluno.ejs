@@ -71,10 +71,12 @@
                         <p class="name-student">Nome</p>
                     </div>
     
+                    <%  alunos.forEach(aluno => { %>
                     <div id="student">
-                        <p id="rm-student">153864</p>
-                        <p id="name-student">Pedro Henrique Alves Candido da Silva</p>
+                        <p id="rm-student"><%= alunos.rm %></p>
+                        <p id="name-student"><%= alunos.nm_aluno %></p>
                     </div>
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -96,16 +98,16 @@
                     </div>
     
                     <div class="infos-student">
+
                         <div class="">
                             Nome:
-                            <span>Pedro Henrique Alves Candido da Silva</span>
+                            <span>355648</span>
                         </div>
                         
                         <div class="">
                             RM:
-                            <span>123456</span>
+                            <span>Pedro Henrique </span>
                         </div>
-    
                         <div class="">
                             Curso:
                             <span>Desenvolvimento de sistemas</span>
