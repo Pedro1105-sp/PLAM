@@ -61,7 +61,7 @@ app.get("/home_secretaria", (req, res) =>{
 
 
 
-app.get('/NomeAluno', (req, res)=>{
+app.get('/aluno', (req, res)=>{
 
 	/** CHAMADA DO AXIOS **/
 	const urlListarCategoria = 'http://localhost:3000/listagemAluno';
@@ -73,11 +73,36 @@ app.get('/NomeAluno', (req, res)=>{
 	**/
 axios.get(urlListarCategoria)
 		.then((response)=>{
-			console.log(response.data);
+			// console.log(response.data);
 			let alunos = response.data;
 			res.render('aluno',{alunos});
 		});
 });
+
+
+app.get('/listarAluno/:rm', (req, res)=>{
+
+	let {rm} = req.params;
+	
+	const urlSelecionarAlunoRM = `http://localhost:3000/aluno/210006${rm}`;
+
+	axios.get(urlSelecionarAlunoRM)
+		.then((response)=>{
+			let aluno = response.data;
+			console.log(aluno);
+			res.render('aluno',{aluno});
+		});
+});
+
+
+
+
+
+
+
+
+
+
 
 app.listen(8070, () =>{
   console.log("Servidor está rodando!");

@@ -60,7 +60,7 @@
         <div class="student">
             <div class="header-student">
                 <div class="header-list" >
-                    <input type="text" placeholder="Digite um RM ou nome....">
+                    <input  type="text" placeholder="Digite um RM ou nome....">
                     <i class='bx bx-search'></i>
                 </div>
             </div>
@@ -73,8 +73,8 @@
     
                     <%  alunos.forEach(aluno => { %>
                     <div id="student">
-                        <p id="rm-student"><%= alunos.rm %></p>
-                        <p id="name-student"><%= alunos.nm_aluno %></p>
+                        <p id="rm-student"><%= aluno.RM %></p>
+                        <p id="name-student"><%= aluno.NM_ALUNO %></p>
                     </div>
                     <% }) %>
                 </div>
