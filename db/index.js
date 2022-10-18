@@ -34,7 +34,7 @@ async function selectTb() {
 async function selectTbAluno() {
     try {
         const conn = await connect();
-        let consulta = `SELECT * FROM bd_tcc.tb_alunos;`;
+        let consulta = `SELECT * FROM bd_tcc.tb_alunos order by NM_ALUNO ASC;`;
         const [rows] = await conn.query(consulta);
         return await rows;
     } catch (erro) {
@@ -53,6 +53,25 @@ async function selectTbDiscilina() {
         return erro;
     }
 };
+
+
+async function selectWhereTbAluno(rm){
+    try {
+        const conn = await connect();
+        let query = `SELECT * FROM bd_tcc.tb_alunos where RM=${rm}`;
+        console.log(rm);
+        console.log(query);
+        const [rows] = await conn.query(query);
+        console.log(rows.length);
+        const final = await rows.length === 0 ? ['Sem reg'] : rows;
+        return await final;
+    } catch(erro){
+        return erro;
+    }
+}
+
+
+// ------------------------- POST ------------------- 
 
 
 function isEmpty(obj) {
@@ -99,4 +118,4 @@ async function insertTbAluno(dados){
     }
 }
 
-module.exports = {selectTb, insertTb, selectTbDiscilina, insertTbAluno, selectTbAluno};
+module.exports = {selectTb, insertTb, selectTbDiscilina, insertTbAluno, selectTbAluno, selectWhereTbAluno};
