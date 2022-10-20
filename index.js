@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+// const searchStudent = require("js/aluno");
+
 const axios = require('axios').default;
 //const moment = require('moment');
 //const alunoController = require('./controller/AlunoController');
@@ -60,29 +62,24 @@ app.get("/home_secretaria", (req, res) =>{
 //   });
 
 
-
 app.get('/aluno', (req, res)=>{
 
 	/** CHAMADA DO AXIOS **/
 	const urlListarCategoria = 'http://localhost:3000/listagemAluno';
 
-	/** 
-	PARAMETROS:
-	1 - URL DA ROTA
-	2 - CALLBACK DA RESPOSTA DA CHAMADA
-	**/
 axios.get(urlListarCategoria)
 		.then((response)=>{
-			// console.log(response.data);
+			
 			let alunos = response.data;
 			res.render('aluno',{alunos});
 		});
 });
 
 
-app.get('/listarAluno/:rm', (req, res)=>{
+app.get('/aluno/:rm', (req, res)=>{
 
 	let {rm} = req.params;
+
 	
 	const urlSelecionarAlunoRM = `http://localhost:3000/aluno/210006${rm}`;
 

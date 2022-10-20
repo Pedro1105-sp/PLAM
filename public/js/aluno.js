@@ -74,3 +74,51 @@ var charGraph = new Chart(ctx, {
     }
 }
 });
+
+// function searchStudent(){
+//   const searchInput = document.querySelector("[data-search]");
+//   const userCard = document.querySelector("[data-user-templete]");
+//   const userContainer = document.querySelector("[data-user-container]");
+
+//   let users = [];
+  
+//   searchInput.addEventListener("input", e => {
+//     const value = e.target.value.toLowerCase();
+//     users.forEach(user => {
+//       const isVisible = 
+//         user.RM.toLowerCase().includes(value) || 
+//         user.NM_ALUNO.toLowerCase().includes(value)
+//       user.element.classList.toggle("hide", !isVisible)
+//     })
+//     console.log(users)
+//   })
+  
+//   fetch('http://localhost:3000/listagemAluno')
+//     .then(res => res.json())
+//     .then(data => {
+//       users = data.map(user =>{
+//         const rmAluno = document.querySelectorAll('[data-rm]');
+//         const nome = document.querySelectorAll('[data-name]');
+
+//         rmAluno.textContent = user.RM;
+//         nome.textContent = user.NM_ALUNO;
+
+        
+
+//         return{ rm: user.RM, nome: user.NM_ALUNO}
+//       })
+//     })
+// }
+
+
+function searchStudent(){
+  var searchInput = document.querySelector("[data-search]");
+  
+  searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    console.log(value) 
+
+  })
+}
+
+searchStudent()

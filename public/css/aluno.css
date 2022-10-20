@@ -240,6 +240,10 @@
   cursor: pointer;
   transition: 0.2s;
 }
+/* 
+.hide{
+  display: none;
+} */
 
 #student:hover{
   background-color: #d0e6f2;

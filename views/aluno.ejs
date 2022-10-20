@@ -60,21 +60,21 @@
         <form action="" class="student">
             <div class="header-student">
                 <div class="header-list" >
-                    <input  type="search" placeholder="Digite um RM ou nome....">
+                    <input data-search type="search" placeholder="Digite um RM ou nome....">
                     <button id="btn" ><i class='bx bx-search'></i></button>
                 </div>
             </div>
             <div class="student-list">
-                <div class="list-name">
+                <div data-user-container  class="list-name">
                     <div>
                         <p class="rm-student">RM</p>
                         <p class="name-student">Nome</p>
                     </div>
     
                     <%  alunos.forEach(aluno => { %>
-                    <div id="student">
-                        <p id="rm-student"><%= aluno.RM %></p>
-                        <p id="name-student"><%= aluno.NM_ALUNO %></p>
+                    <div data-user-templete  id="student">
+                        <p data-rm id="rm-student"><%= aluno.RM %></p>
+                        <p data-name id="name-student"><%= aluno.NM_ALUNO %></p>
                     </div>
                     <% }) %>
                 </div>
