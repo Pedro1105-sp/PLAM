@@ -58,7 +58,7 @@ async function selectTbDiscilina() {
 async function selectWhereTbAluno(rm){
     try {
         const conn = await connect();
-        let query = `SELECT * FROM bd_tcc.tb_alunos where RM=${rm}`;
+        let query = `SELECT * FROM bd_tcc.tb_alunos where RM =` + rm;
         console.log(rm);
         console.log(query);
         const [rows] = await conn.query(query);

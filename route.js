@@ -1,4 +1,5 @@
 const express = require('express');
+const res = require('express/lib/response');
 const router = express.Router();
 const db = require('./db');
 const dbIndex = require('./db/index.js');
@@ -34,9 +35,12 @@ router.get(
     }
 );
 
-router.get(  
+router.post(  
     "/aluno/:rm", async (request,response) => {
-        const dados = await db.selectWhereTbAluno(request.params.rm);
+        const {rm} = request.body;
+        console.log(rm)
+
+        const dados = await db.selectWhereTbAluno(rm);
         console.log(dados);
         response.send(
             JSON.stringify(dados)
