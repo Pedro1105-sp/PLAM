@@ -1,4 +1,3 @@
-
 let selects = document.querySelectorAll(".selector");
 
 selects.forEach(element => {
@@ -105,20 +104,49 @@ var charGraph = new Chart(ctx, {
 
         
 
-//         return{ rm: user.RM, nome: user.NM_ALUNO}
+//         return{ rm: user.RM, nome: user.NM_ALUNO }
 //       })
 //     })
 // }
 
 
-function searchStudent(){
-  var searchInput = document.querySelector("[data-search]");
+// function searchStudent(){
+//   var searchInput = document.querySelector("[data-search]");
   
-  searchInput.addEventListener("input", e => {
-    const value = e.target.value.toLowerCase();
-    console.log(value) 
+//   var aluno = searchInput.addEventListener("input", e => {
+//     const value = e.target.value.toLowerCase();
+//     console.log(value) 
 
-  })
+//   })
+// }
+
+// searchStudent()
+
+
+
+var btnAluno = document.getElementById('btn');
+var rm = document.getElementById('rm');
+
+
+btnAluno.addEventListener("click", getAluno);
+
+function getAluno(){
+  console.log(rm.value)
+
+  var aluno = rm.value;
+
+  console.log(aluno);
+
+
+  const url = `http://localhost:3000/aluno/${aluno}`;
+  console.log(url);
+
+  fetch(url, {method: "POST", body: JSON.stringify({rm: aluno})}).then(
+    resposta => {
+      return resposta.json();
+    }
+  ).then(data => {
+   console.log(data)
+
+  }).catch(error => console.log(error));
 }
-
-searchStudent()

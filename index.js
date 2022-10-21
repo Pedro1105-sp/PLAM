@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { rulesToMonitor } = require("nodemon/lib/monitor/match");
 const app = express();
 
 // const searchStudent = require("js/aluno");
@@ -76,18 +77,19 @@ axios.get(urlListarCategoria)
 });
 
 
-app.get('/aluno/:rm', (req, res)=>{
+app.post('/aluno/:rm', (req, res)=>{
 
-	let {rm} = req.params;
-
+	let {rm} = req.body;
+	console.log(rm)
 	
-	const urlSelecionarAlunoRM = `http://localhost:3000/aluno/210006${rm}`;
+	const urlSelecionarAlunoRM = "http://localhost:3000/aluno/" + rm;
+	console.log(urlSelecionarAlunoRM)
 
-	axios.get(urlSelecionarAlunoRM)
+	axios.post(urlSelecionarAlunoRM)
 		.then((response)=>{
-			let aluno = response.data;
-			console.log(aluno);
-			res.render('aluno',{aluno});
+			let alunos = response.data;
+			console.log(alunos);
+			res.render('aluno',{alunos});
 		});
 });
 

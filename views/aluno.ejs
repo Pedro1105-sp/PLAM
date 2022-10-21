@@ -57,11 +57,11 @@
             </div>
         </div>
 
-        <form action="" class="student">
+        <form method="post" class="student">
             <div class="header-student">
                 <div class="header-list" >
-                    <input data-search type="search" placeholder="Digite um RM ou nome....">
-                    <button id="btn" ><i class='bx bx-search'></i></button>
+                    <input name="rm" id="rm" data-search type="search" placeholder="Digite um RM ou nome....">
+                    <button id="btn" type="button" onclick="getAluno()"><i class='bx bx-search'></i></button>
                 </div>
             </div>
             <div class="student-list">
@@ -70,13 +70,14 @@
                         <p class="rm-student">RM</p>
                         <p class="name-student">Nome</p>
                     </div>
-    
+
                     <%  alunos.forEach(aluno => { %>
                     <div data-user-templete  id="student">
                         <p data-rm id="rm-student"><%= aluno.RM %></p>
                         <p data-name id="name-student"><%= aluno.NM_ALUNO %></p>
                     </div>
                     <% }) %>
+
                 </div>
             </div>
         </form>
