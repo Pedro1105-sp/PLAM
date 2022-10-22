@@ -40,41 +40,6 @@
   justify-content: center;
 }
 
-.button_submit .add{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button_submit .add-student{
-  text-align: center;
-
-  width: 90%;
-  cursor: pointer;
-  border: none;
-  height: 10rem;
-  padding: 0.3rem 1.5rem 0 1rem;
-  font-size: 1.3rem;
-  background-color: var(--white);
-  border-radius: 1.2rem;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 0px 10px 0px #00000040
-}
-
-.button_submit > div > .add-student > i{
-  font-size: 5.3rem;
-  padding-left: 1rem;
-  color: var(--blue-button);
-}
-
-.button_submit > div > .add-student > span{
-  margin-left: 2rem;
-  font-weight: 500;
-  font-size: 2rem;
-  color: var(--blue);
-}
 .submit {
   position: absolute;
   bottom: 1.2rem;

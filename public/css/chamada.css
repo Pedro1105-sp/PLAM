@@ -301,10 +301,24 @@ input[type="file"] {
 
 }
 
-/* .infos{
-  outline: 1px solid #000;
-  border-radius: 1rem;
-} */
+.infos{
+  height: 95%;
+  overflow-y: scroll;
+  border-radius: 1.2rem 1.2rem 0 0;
+  border: 1px solid gray;
+}
+
+.infos::-webkit-scrollbar {
+  width: 0.5rem;
+  border: none;
+}
+
+.infos::-webkit-scrollbar-thumb {
+  width: 1rem;
+  background-color: var(--blue-medium);
+  border-radius: 1.2rem;
+}
+
 
 .call_button {
   display: flex;

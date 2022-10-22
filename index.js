@@ -34,9 +34,9 @@ app.get("/home", (req, res) =>{
   res.render("index");
 });
 
-app.get("/chamada", (req, res) =>{
-  res.render("chamada");
-});
+// app.get("/chamada", (req, res) =>{
+//   res.render("chamada");
+// });
 
 app.get("/home_secretaria", (req, res) =>{
   res.render("home");
@@ -73,6 +73,19 @@ axios.get(urlListarCategoria)
 			
 			let alunos = response.data;
 			res.render('aluno',{alunos});
+		});
+});
+
+app.get('/chamada', (req, res)=>{
+
+	/** CHAMADA DO AXIOS **/
+	const urlListarCategoria = 'http://localhost:3000/listagemAluno';
+
+axios.get(urlListarCategoria)
+		.then((response)=>{
+			
+			let alunos = response.data;
+			res.render('chamada',{alunos});
 		});
 });
 
