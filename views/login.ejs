@@ -4,25 +4,33 @@
    
    <link rel="stylesheet" href="/css/login.css">
    
-   <div class="container">
-     <div class="img">
-       <img class="teacher-img" src="/img/login.svg" alt="">
-     </div>
+    <div class="container">
+      <div class="img">
+        <img class="teacher-img" src="/img/login.svg" alt="">
+      </div>
 
-     <div class="form">
+      <div class="form">
 
       <div >
         <img class="logo" src="/img/logo.svg" alt="">
       </div>
 
       <div class="form-login">
-        <label for="number">RM:</label>
-        <input class="login" id="number" type="text">
 
-        <label for="password">Senha:</label>
-        <input id="password" class="login" type="password">
-        
-        <a class="forgot-password" href="#"><p>Esqueci a Senha</p></a>
+        <div>
+          <label for="number">RM:</label>
+          <input class="login" id="number" type="text">
+        </div>
+
+        <div>
+          <label for="password">Senha:</label>
+          <input id="password" class="login" type="password">
+          <img class="eyePassword" src="/img/eyeClosed.svg" alt="">
+        </div>
+    
+        <div class="forgot-button">
+        <button class="forgot-password" type="menu">Esqueci a senha</button>
+        </div>
 
         <div class="button">
           <a href="/home">
@@ -31,8 +39,36 @@
         </div>
       </div>
 
-     </div>
+      </div>
 
-   </div>
+    </div>
+
+    <div id="modal-password" class="modal-container">
+      <div class="modal">
+        <button class="fechar">x</button>
   
+        <div class="padlock">
+          <img src="/img/cadeado.svg" alt="">
+        </div>
+
+        <form class="infos">
+        
+          <h1 class="validation">Verificação de Segurança</h1>
+          <h1 class="instructions">Digite o seu numero de telefone e <br> 
+            enviaremos um SMS com instruções <br>
+            para redefinir sua senha</h1>
+
+          <div class="number-tel">
+            <label for="tel">Por favor, digite o numero abaixo</label>
+            <input type="tel" name="tel" id="tel">
+          </div>
+
+          <button type="submit"></button>
+
+        </form>
+  
+      </div>
+  
+   <script src="/js/login.js"></script>
+
  </body>

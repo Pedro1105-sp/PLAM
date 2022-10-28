@@ -19,7 +19,7 @@ body{
   height: 100%;
 }
 
-.form-login {
+.form-login > div{
   display: flex;
   flex-direction: column;
 }
@@ -39,6 +39,8 @@ body{
   width: 400px;
   height: 60px;
   margin-bottom: 1.2rem;
+  padding: 0 1rem;
+  font-size: 1.8rem;
 
   background: #FFFFFF;
   border: 1px solid #275975;
@@ -50,10 +52,33 @@ label {
   margin-left: 1rem;
 }
 
+.eye{
+  display: flex;
+}
+
+.eyePassword{
+  position: absolute;
+  top: 64%;
+  right: 17%;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.forgot-button{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .forgot-password{
+  background-color: var(--background);
+  border: none;
   text-align: center;
   font-size: 1.6rem;
+  cursor: pointer;
 }
+
 
 .button{
   display: flex;
@@ -76,4 +101,104 @@ label {
 
 .submit:hover{
   background-color: var(--button-hover);
+}
+
+/* ---------- */
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.mostrar {
+  display: flex;
+}
+
+.modal {
+  background-color: var(--background);
+  width: 110rem;
+  height: 55rem;
+  padding: 4rem;
+  /* border: 1rem solid var(--button-hover); */
+  color: var(--white);
+  position: relative;
+  border-radius: 1rem;
+}
+
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -6rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.mostrar .modal {
+  animation: modal .3s;
+}
+
+.fechar {
+  position: absolute;
+  font-size: 2em;
+  top: -3rem;
+  right: -3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.4rem solid var(--button-hover);
+  background-color: var(--background-modal);
+  color: white;
+  cursor: pointer;
+
+}
+
+.padlock > img{
+  position: absolute;
+  top: -10%;
+  right: 44%;
+}
+
+
+.infos{
+  text-align: center;
+}
+
+.infos > .validation{
+  font-size: 2.4rem;
+  margin-top: 7rem;
+  color: var(--blue);
+}
+
+.infos > .instructions{
+  margin-top: 1rem;
+  color: black;
+  font-weight: 800;
+}
+
+.number-tel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.infos > .number-tel > label{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  color: #949494;
 }

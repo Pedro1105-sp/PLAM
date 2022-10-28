@@ -49,13 +49,21 @@
             <button class="iniciar" type="submit">Clique aqui para adicionar um novo aluno!</button>
         </div>
 
+        <div class="add">
+          <div class="add-student">
+              <i class='bx bx-message-square-add'></i>
+              <button class="iniciar" type="submit">Clique aqui para adicionar um novo professor!</button>
+        </div>
+
     </div>
 
     <div id="modal-chamada" class="modal-container">
       <div class="modal">
           <button class="fechar">x</button>
 
-          <form class="include">
+          <form action="http://localhost:3000/inserirAluno" method="post" class="include">
+
+            <h1>Preencha os campos abaixo para adicionar um novo aluno!</h1>
 
             <div class="include_student">
               <label for="rm-aluno">RM:</label>
@@ -75,7 +83,7 @@
 
               <div class="include_student">
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf">
+                <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="off">
               </div>
 
               <button id="incluir" type="submit" >incluir</button>
