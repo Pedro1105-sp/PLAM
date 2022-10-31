@@ -7,9 +7,12 @@ import QrCode from "../pages/User/qrcode";
 import Perfil from "../pages/User/perfil";
 import Diario from "../pages/User/diario";
 
+import {Provider} from "../components/context/authContext"
+import {SafeAreaProvider} from "react-native-safe-area-context";
+
 const Stack = createNativeStackNavigator();
 
-export default function Routes(){
+const Routes = ()=>{
     return(
         <Stack.Navigator>
             <Stack.Screen 
@@ -47,4 +50,14 @@ export default function Routes(){
 
         </Stack.Navigator>
     );
-}
+};
+
+export default ()=>{
+    return(
+        <Provider>
+            <SafeAreaProvider>
+                <Routes />
+            </SafeAreaProvider>
+        </Provider>
+    );
+};
