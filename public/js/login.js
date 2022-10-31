@@ -1,17 +1,17 @@
 const password = document.querySelector("#password");
-const eyePassword = document.querySelector(".eyePassword");
+const eyePassword = document.querySelector("#pass");
 
 eyePassword.onclick = () => 
 {
     if (password.type === 'password')
     {
         password.type = 'text';
-        eyePassword.src = '/img/eyeOpen.svg';
+        
     }
     else
     {
         password.type = 'password';
-        eyePassword.src = '/img/eyeClosed.svg';
+        // eyePassword.src = '/img/eyeClosed.svg';
     }
 }
 

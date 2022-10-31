@@ -65,18 +65,35 @@ label {
   cursor: pointer;
 }
 
-.forgot-button{
+.view-password{
+  text-align: center;
   display: flex;
-  align-items: center;
-  width: 100%;
+}
+
+.view-password > input{
+  margin-left: 1rem;
+  outline: none;
+}
+
+.view-password > label{
+  font-size: 1.2rem;
+}
+
+.forgot-button{
+  margin-left: 17rem;
 }
 
 .forgot-password{
   background-color: var(--background);
   border: none;
   text-align: center;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
   cursor: pointer;
+  transition: 0.1s;
+}
+
+.forgot-password:hover{
+  color: var(--blue);
 }
 
 
