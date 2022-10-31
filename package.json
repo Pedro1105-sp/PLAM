@@ -10,10 +10,13 @@
   "author": "ABNER DA SILVA, JONATHAN ORNELES, LARISSA MOREIRA, MARINA MARTINS, PEDRO SILVA E VICTOR DOS SANTOS",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "config": "^3.3.8",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
     "reload": "^3.2.0"
