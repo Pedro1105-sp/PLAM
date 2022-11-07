@@ -118,4 +118,34 @@ async function insertTbAluno(dados){
     }
 }
 
-module.exports = {selectTb, insertTb, selectTbDiscilina, insertTbAluno, selectTbAluno, selectWhereTbAluno};
+// async function login(dados){
+//     try{
+//         //const {ID_ALUNO_USUARIO, SENHA_ALUNO} = req.body;
+//         if(isEmpty(dados)) {
+//             return ['ERRO AO INSERIR, DADOS NULO'];
+//         } else{
+//             const conn = await connect();
+//             const query = `SELECT * FROM tb_usuario_alunos WHERE ID_ALUNO_USUARIO = ?;`;
+//             const values = [dados.ID_ALUNO_USUARIO, dados.SENHA_ALUNO];
+//             const user = await conn(query).first('*').where({ID_ALUNO_USUARIO: ID_ALUNO_USUARIO})
+//         }
+//     } catch(e){
+
+//     }
+// }
+
+async function login(ID_ALUNO_USUARIO){
+    try{
+            const conn = await connect();
+            const query = `SELECT * FROM tb_usuario_alunos WHERE ID_ALUNO_USUARIO = ?;` + ID_ALUNO_USUARIO;
+            const [rows] = await conn.query(query);
+            return await rows;
+             
+            // return ['LOGIN OKAY'];
+        } catch(erro){
+        console.log("NÃO FOI REALIZAR O LOGIN AO BANCO DE DADOS", erro)
+        return erro;
+    }
+}
+
+module.exports = {selectTb, insertTb, selectTbDiscilina, insertTbAluno, selectTbAluno, selectWhereTbAluno, login};
