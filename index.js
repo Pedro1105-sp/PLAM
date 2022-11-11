@@ -30,7 +30,28 @@ app.get("/login", (req, res) =>{
   res.render("login");
 });
 
+// app.post('/logado', (req, res)=>{
+
+// 	const urlAlterarCategoria = 'http://localhost:3000/login';
+// 	console.log(req.body);
+
+// 	axios.post(urlAlterarCategoria, req.body)
+// 	.then(
+// 		res.send('logado!')
+// 	)
+
+// });
+
 app.get("/home", (req, res) =>{
+
+	const urlListarCategoria = 'http://localhost:3000/listagemTurma';
+
+	axios.get(urlListarCategoria)
+			.then((response)=>{
+				
+				let turmas = response.data;
+				res.render('index',{turmas});
+			});
   res.render("index");
 });
 
@@ -76,7 +97,21 @@ axios.get(urlListarCategoria)
 		});
 });
 
-app.get('/chamada', (req, res)=>{
+app.get('/turma', (req, res)=>{
+
+	/** CHAMADA DO AXIOS **/
+	const urlListarCategoria = 'http://localhost:3000/listagemTurma';
+
+axios.get(urlListarCategoria)
+		.then((response)=>{
+			
+			let turmas = response.data;
+			res.render('index',{turmas});
+		});
+});
+
+
+app.get('/chama da', (req, res)=>{
 
 	/** CHAMADA DO AXIOS **/
 	const urlListarCategoria = 'http://localhost:3000/listagemAluno';
@@ -105,6 +140,8 @@ app.post('/aluno/:rm', (req, res)=>{
 			res.render('aluno',{alunos});
 		});
 });
+
+
 
 
 

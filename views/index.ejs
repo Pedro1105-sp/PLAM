@@ -66,26 +66,39 @@
             <h1>Preencha os campos abaixo para adicionar um novo aluno!</h1>
 
             <div class="include_student">
-              <label for="rm-aluno">RM:</label>
-              <input type="text" name="rm-aluno" id="rm-aluno">
+              <label for="RM">RM:</label>
+              <input type="number" name="rm" id="rm-aluno" value="">
             </div>
             
               <div class="include_student">
-                <label for="name"> Nome:</label>
-                <input type="text" name="name" id="name">
+                <label for="NM_ALUNO"> Nome:</label>
+                <input type="text" name="nm_aluno" id="name">
+              </div>
+
+              <div class="include_student">
+                <label for="CPF_ALUNO">CPF:</label>
+                <input type="text" name="cpf_aluno" id="cpf" maxlength="14" autocomplete="off">
               </div>
 
 
               <div class="include_student">
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone">
+                <label for="TEL_ALUNO">Telefone:</label>
+                <input type="text" name="tel_aluno" id="telefone" maxlength="16">
               </div>
 
-              <div class="include_student">
-                <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="off">
-              </div>
+              <div class="include_student">   
+                <%  turmas.forEach(turmas => { %>
 
+                  <input 
+                    type="checkbox" 
+                    name="id_turma_aluno" 
+                    id="id_turma_aluno" >
+
+                    <label for="id_turma_aluno"><%= turmas.ID_TURMA_ALUNO %></label>
+
+                <% }) %>
+              </div>
+              
               <button id="incluir" type="submit" >incluir</button>
 
           </form>

@@ -15,7 +15,7 @@
         <img class="logo" src="/img/logo.svg" alt="">
       </div>
 
-      <div class="form-login">
+      <form action="http://localhost:8070/logado" method="post" class="form-login">
 
         <div>
           <label for="number">RM:</label>
@@ -43,7 +43,7 @@
             <button class="submit" type="submit">Entrar</button>
           </a>
         </div>
-      </div>
+      </form>
 
       </div>
 
@@ -57,7 +57,7 @@
           <img src="/img/cadeado.svg" alt="">
         </div>
 
-        <form class="infos">
+        <form  class="infos">
         
           <h1 class="validation">Verificação de Segurança</h1>
           <h1 class="instructions">Digite o seu numero de telefone e <br> 
@@ -65,11 +65,11 @@
             para redefinir sua senha</h1>
 
           <div class="number-tel">
-            <label for="tel">Por favor, digite o numero abaixo</label>
+            <label for="tel">Por favor, digite o número abaixo</label>
             <input type="tel" name="tel" id="tel">
           </div>
 
-          <button type="submit"></button>
+          <button class="button_password" type="submit">Enviar</button>
 
         </form>
   

@@ -191,6 +191,9 @@ label {
 
 .infos{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .infos > .validation{
@@ -218,4 +221,28 @@ label {
   font-weight: 700;
   margin-top: 2rem;
   color: #949494;
+}
+
+.infos > .number-tel > input{
+  margin-top: 3rem;
+  margin-left: 1rem;
+  width: 35rem;
+  height: 5rem;
+  padding: 0 2rem;
+
+  border: solid 0.1rem #275975;
+  border-radius: 1.0rem;
+}
+
+.button_password{
+  margin-top: 5rem;
+  width: 15rem;
+  height: 3.5rem;
+
+  background-color: var(--blue-button);
+  border: none;
+  border-radius: 1.0rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.8rem;
 }
