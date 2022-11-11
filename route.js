@@ -31,6 +31,17 @@ router.get(
 );
 
 router.get(
+    "/listagemTurma", async (request,response)=>{
+        const dados = await db.selectTbTurma();
+        console.log(dados);
+        response.send(
+            JSON.stringify(dados)
+        )
+    }
+);
+
+
+router.get(
     "/listagemAluno", async (request,response)=>{
         const dados = await db.selectTbAluno();
         console.log(dados);
