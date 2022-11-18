@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useContext, useState} from "react";
 import { 
     View, 
     Text,
@@ -8,11 +8,16 @@ import {
     TouchableOpacity,
     TextInput,
  } from "react-native";
-
+ import {Context} from "../../components/context/authContext";
+ import {SafeAreaView} from "react-native-safe-area-context";
  import { useNavigation } from "@react-navigation/native";
 
 export default function Welcome() {
     const navigation = useNavigation();
+    const {loginUser} = useContext(Context);
+
+    const [rm, setRM] = useState("");
+    const [senha, setSenha] = useState("")
 
     return (
         <View style={style.container}>
@@ -35,11 +40,19 @@ export default function Welcome() {
                 <Text style={style.textInput} >RM:</Text>
                 <TextInput 
                     //placeholder="RM:"
+                    value={rm}
+                    onChangeText={(text) => setRM(text)}
+                    // USAR ICON
+                    // left={
+
+                    // }
                     style={style.input}
                 />
                 <Text style={style.textInput} >Senha:</Text>
                 <TextInput 
                     //placeholder="SENHA:"
+                    value={senha}
+                    onChangeText={(text) => setSenha(text)}
                     style={style.input}
                 />
                 <TouchableOpacity 
@@ -53,7 +66,8 @@ export default function Welcome() {
 
                 <TouchableOpacity 
                 style={style.botao}
-                onPress={() => navigation.navigate("User")}
+                //onPress={() => navigation.navigate("User")}
+                onPress={()=> {loginUser(rm, senha); navigation.navigate("User")}}
                 >
                     <Text style={style.botaoText} >
                         ENTRAR
