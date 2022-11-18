@@ -17,10 +17,16 @@
     "easyqrcode-react-native": "^4.0.9",
     "expo": "~46.0.6",
     "expo-status-bar": "~1.4.0",
+<<<<<<< HEAD
+=======
+    "react": "18.0.0",
+    "react-native": "^0.69.6",
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
     "react-native-pie": "^1.1.2",
     "react-native-safe-area-context": "4.3.1",
     "react-native-screens": "~3.15.0",
     "react-native-svg": "12.3.0",
+    "react-native-webview": "^11.23.0",
     "victory-native": "^36.6.6"
   },
   "devDependencies": {

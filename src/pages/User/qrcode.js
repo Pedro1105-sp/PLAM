@@ -46,7 +46,11 @@ export default class QrCode extends Component{
                     <View style={style.agrupo}>
                         <TouchableOpacity style={style.home} onPress={() => {this.props.navigation.navigate("User")}}><Image source={require("../../assets/home.png")} /></TouchableOpacity>
                         <TouchableOpacity onPress={() =>{this.props.navigation.navigate("QrCode")}}><Image source={require("../../assets/qrcode.png")} /></TouchableOpacity>
+<<<<<<< HEAD
                         <TouchableOpacity style={style.perfil} onPress={() => {this.props.navigation.navigate("Perfil")}}><Image source={require("../../assets/perfil.png")} /></TouchableOpacity>
+=======
+                        <TouchableOpacity style={style.perfil} onPress={() => {this.props.navigation.navigate("QrCode")}}><Image source={require("../../assets/perfil.png")} /></TouchableOpacity>
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
                 </View>
             </View>
 
@@ -62,10 +66,17 @@ export default class QrCode extends Component{
     },
     fotoPerfil:{
         width: "100%",
+<<<<<<< HEAD
         bottom: "20%"
     },
     textAlunoNome:{
         bottom: "48%",
+=======
+        bottom: "24%"
+    },
+    textAlunoNome:{
+        bottom: "53%",
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
         justifyContent: "center",
         alignItems: "center",
         left: "35%",
@@ -74,13 +85,21 @@ export default class QrCode extends Component{
         backgroundColor: "#FFF",
         width: "65%",
         height: "28%",
+<<<<<<< HEAD
         bottom: "27%",
+=======
+        bottom: "31%",
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
         left: "17%",
         justifyContent: "center",
         alignItems: "center"
     },
     textAproximacao:{
+<<<<<<< HEAD
         bottom: "25%"
+=======
+        bottom: "29%"
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
     },
     containerHome:{
         backgroundColor: "#FFF",
@@ -88,7 +107,11 @@ export default class QrCode extends Component{
         height: "10%",
         borderRadius: 35,
         marginStart: "5%",
+<<<<<<< HEAD
         bottom: "14.4%"
+=======
+        bottom: "20.4%"
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
     },
     agrupo:{
         flexDirection: "row",

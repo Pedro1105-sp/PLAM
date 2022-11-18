@@ -21,6 +21,7 @@ const loginUser = (dispatch) =>{
     return async (rm, senha) =>{
         try{
            const data = await api.post("/login", {
+<<<<<<< HEAD
                 rm: rm,
                 senha: senha,
             });
@@ -29,6 +30,19 @@ const loginUser = (dispatch) =>{
 
             const token = await AsyncStorage.getItem("token");
             console.log(token);
+=======
+                rm,
+                senha
+            });
+
+            // await AsyncStorage.setItem("token", data.data.token);
+
+            // if (response && response.data && response.data.token) {
+            //     await AsyncStorage.setItem('token', response.data.token);
+            // }
+            //const token = await AsyncStorage.getItem("token");
+            console.log(data);
+>>>>>>> f01f473e2e102adbf1d666f2dd34cc6d1b690ba0
         } catch (error){
             console.log(error);
            // return error.response.data;
