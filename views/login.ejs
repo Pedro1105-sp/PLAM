@@ -15,34 +15,25 @@
         <img class="logo" src="/img/logo.svg" alt="">
       </div>
 
-      <form action="http://localhost:8070/logado" method="post" class="form-login">
+      <form action="/login" method="post" class="form-login">
 
         <div>
           <label for="number">RM:</label>
-          <input class="login" id="number" type="text">
+          <input class="login" id="number" name="login" type="text">
         </div>
 
         <div>
           <label for="password">Senha:</label>
-          <input id="password" class="login" type="password">
+          <input id="password" class="login" name="password" type="password">
           <!-- <img class="eyePassword" src="/img/eyeClosed.svg" alt=""> -->
           
             <div class="view-password">
               <input type="checkbox" name="" id="pass">
               <label for="pass">Exibir senha!</label>
-              <div class="forgot-button">
-                <button class="forgot-password" type="menu">Esqueci a senha</button>
-              </div>
             </div>
         </div>
-    
-        
 
-        <div class="button">
-          <a href="/home">
-            <button class="submit" type="submit">Entrar</button>
-          </a>
-        </div>
+          <button class="submit" type="submit">Entrar</button>
       </form>
 
       </div>

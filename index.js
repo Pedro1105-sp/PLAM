@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { rulesToMonitor } = require("nodemon/lib/monitor/match");
 const app = express();
+const session = require('express-session');
 
 // const searchStudent = require("js/aluno");
 
@@ -20,27 +21,30 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.text())
 
-// app.use("/", alunoController);
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
-// app.use("/", cursoController);
-
-// app.use("/", professorController);
-
-app.get("/login", (req, res) =>{
+app.get("/", (req, res) =>{
   res.render("login");
 });
 
-// app.post('/logado', (req, res)=>{
+app.post('/', (req, res)=>{
 
-// 	const urlAlterarCategoria = 'http://localhost:3000/login';
-// 	console.log(req.body);
+	const urlAlterarCategoria = 'http://localhost:3000/login';
+	
+	let login = req.body.login;
+	let password = req.body.password;
+	
+	console.log(login);
+	axios.post(urlAlterarCategoria, req.body)
+	.then(() =>{
+		if ()
+	})
 
-// 	axios.post(urlAlterarCategoria, req.body)
-// 	.then(
-// 		res.send('logado!')
-// 	)
-
-// });
+});
 
 app.get("/home", (req, res) =>{
 
