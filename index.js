@@ -1,12 +1,18 @@
 const express = require("express");
+const alunoController = require("./controller/AlunoController");
+const cursoController = require("./controller/CursoController");
+const turmaController = require("./controller/TurmaController");
 const bodyParser = require("body-parser");
-const { rulesToMonitor } = require("nodemon/lib/monitor/match");
 const app = express();
+//const { rulesToMonitor } = require("nodemon/lib/monitor/match");
 const session = require('express-session');
-
 // const searchStudent = require("js/aluno");
 
 const axios = require('axios').default;
+
+app.use('/', alunoController);
+app.use('/', cursoController);
+app.use('/', turmaController);
 //const moment = require('moment');
 //const alunoController = require('./controller/AlunoController');
 
@@ -144,16 +150,6 @@ app.post('/aluno/:rm', (req, res)=>{
 			res.render('aluno',{alunos});
 		});
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
