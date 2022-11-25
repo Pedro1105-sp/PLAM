@@ -3,12 +3,15 @@ const express = require("express");
 const router = express.Router();
 
 const modelAluno = require("../model/AlunoModel");
+const bcrypt = require("bcryptjs");
+//const { where } = require("sequelize");
 
-router.get("/listarAlunos", (req, res)=>{
+
+router.get("/chamada", (req, res)=>{
     modelAluno.findAll()
         .then(
             (alunos)=>{
-                return res.status(200).json(alunos);
+                res.render('chamada', {alunos : alunos})
             }
         ).catch(
             (erro)=>{
@@ -85,6 +88,38 @@ router.put("/alterarAluno", (req, res)=>{
         }
     );
 });
+
+
+
+router.post('/authenticate', async (req, res) => {
+    const {RM, SENHA_ALUNO} = req.body;
+
+    const user = await modelAluno.findOne({ RM });
+
+    if(!user){
+        return res.send(400).send({error: 'User not found!'})
+    }
+
+    if(!await bcrypt.compare(SENHA_ALUNO, user.SENHA_ALUNO)){
+        return res.send(user)
+        //.send({error: 'Invalid password!'})
+    }
+
+    res.send({user})
+ })
+
+
+// router.post("/teste", async(req, res)=>{
+//     const user = await modelAluno.findOne({
+//         where:{RM: req.body, SENHA_ALUNO: req.body}
+//     });
+//     if(user === null){
+//         res.send(JSON.stringify("error"))
+//     } else{
+//         res.send(user)
+//     }
+// })
+
 
 router.delete("/excluirAluno/:id", (req, res)=>{
     // RECEBER DADOS

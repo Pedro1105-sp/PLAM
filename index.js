@@ -1,7 +1,7 @@
 const express = require("express");
 const alunoController = require("./controller/AlunoController");
 const cursoController = require("./controller/CursoController");
-const turmaController = require("./controller/TurmaController");
+const TurmaController = require("./controller/TurmaController");
 const bodyParser = require("body-parser");
 const app = express();
 //const { rulesToMonitor } = require("nodemon/lib/monitor/match");
@@ -10,22 +10,9 @@ const session = require('express-session');
 
 const axios = require('axios').default;
 
-app.use('/', alunoController);
-app.use('/', cursoController);
-app.use('/', turmaController);
-//const moment = require('moment');
-//const alunoController = require('./controller/AlunoController');
-
-// const professorController = require("./controller/ProfessorController");
-// const cursoController = require("./controller/CursoController");
-
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(express.text())
 
 app.use(session({
 	secret: 'secret',
@@ -33,22 +20,26 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(express.text())
+
+app.use('/', alunoController);
+app.use('/', cursoController);
+app.use('/', TurmaController);
+//const moment = require('moment');
+//const alunoController = require('./controller/AlunoController');
+
+// const professorController = require("./controller/ProfessorController");
+// const cursoController = require("./controller/CursoController");
+
+
+
 app.get("/", (req, res) =>{
   res.render("login");
 });
 
 app.post('/', (req, res)=>{
-
-	const urlAlterarCategoria = 'http://localhost:3000/login';
-	
-	let login = req.body.login;
-	let password = req.body.password;
-	
-	console.log(login);
-	axios.post(urlAlterarCategoria, req.body)
-	.then(() =>{
-		if ()
-	})
 
 });
 
@@ -121,18 +112,16 @@ axios.get(urlListarCategoria)
 });
 
 
-app.get('/chama da', (req, res)=>{
+// app.get('/chamada', (req, res)=>{
 
-	/** CHAMADA DO AXIOS **/
-	const urlListarCategoria = 'http://localhost:3000/listagemAluno';
-
-axios.get(urlListarCategoria)
-		.then((response)=>{
-			
-			let alunos = response.data;
-			res.render('chamada',{alunos});
-		});
-});
+// 	TurmaController.findAll({ raw: true, order: [
+// 		['id', 'ASC'] // ASC = crescente
+// 	  ] }).then(turmas => { 
+// 		res.render("chamada", {
+// 		  turmas: turmas
+// 		});
+// 	  });
+// });
 
 
 app.post('/aluno/:rm', (req, res)=>{
