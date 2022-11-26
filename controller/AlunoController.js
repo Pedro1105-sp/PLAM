@@ -1,10 +1,16 @@
 const express = require("express");
-
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const session = require('express-session');
 const router = express.Router();
 
 const modelAluno = require("../model/AlunoModel");
-const bcrypt = require("bcryptjs");
-//const { where } = require("sequelize");
+
+router.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 
 router.get("/chamada", (req, res)=>{
@@ -24,9 +30,10 @@ router.get("/chamada", (req, res)=>{
         );
 });
 
-router.post("/inserirAluno", (req, res)=>{
+router.post("/inserirAluno", async(req, res)=>{
     // RECEBER OS DADOS
-    let {RM, NM_ALUNO, CPF_ALUNO, TEL_ALUNO, EMAIL_ALUNO, SENHA_ALUNO, ID_TURMA_ALUNO} = req.body;
+    let {RM, NM_ALUNO, CPF_ALUNO, TEL_ALUNO, EMAIL_ALUNO, ID_TURMA_ALUNO} = req.body;
+    let SENHA_ALUNO = await bcrypt.hash(req.body.SENHA_ALUNO, 8);
 
     // GRAVAR DADOS
     modelAluno.create(
@@ -57,9 +64,52 @@ router.post("/inserirAluno", (req, res)=>{
     );
 });
 
-router.put("/alterarAluno", (req, res)=>{
+router.get("/login", (req, res)=>{
+
+    res.render('login')
+
+});
+
+
+router.post("/login", async(req, res)=>{
+    let {RM, SENHA_ALUNO} = req.body
+    const usuario = await modelAluno.findOne({
+        attribites: ["RM", "NOME", "E-MAIL", "SENHA"],
+        where:{
+            RM
+        }
+    });
+
+    if(!usuario){
+        console.log(RM)
+    return res.send({mensagem: "Usuário ou senha incorretos RM!!"})
+    }
+
+    bcrypt.compare(SENHA_ALUNO, usuario.SENHA_ALUNO, (err, result)=>{
+        if(result){
+            return res.send({mensagem: "FALHA LOGIN"})
+        } else{
+        //     const token = jwt.sign({
+        //         RM: usuario.RM,
+        //         NM_ALUNO: usuario.NM_ALUNO,
+        //         EMAIL_ALUNO: usuario.EMAIL_ALUNO,
+        //         expiresIn: "1h"
+        //     }
+        //  )
+         return res.send({
+            mensagem: "LOGADO",
+            RM: usuario.RM,
+            NM_ALUNO: usuario.NM_ALUNO
+         })
+        }
+    })   
+    
+})
+
+router.put("/alterarAluno", async(req, res)=>{
     // RECEBER DADOS
-    let {RM, NM_ALUNO, CPF_ALUNO, TEL_ALUNO, EMAIL_ALUNO, SENHA_ALUNO, ID_TURMA_ALUNO} = req.body;
+    let {RM, NM_ALUNO, CPF_ALUNO, TEL_ALUNO, EMAIL_ALUNO, ID_TURMA_ALUNO} = req.body;
+    let SENHA_ALUNO = await bcrypt.hash(req.body.SENHA_ALUNO, 8);
 
     // ALTERAR DADOS
     modelAluno.update(
@@ -88,7 +138,6 @@ router.put("/alterarAluno", (req, res)=>{
         }
     );
 });
-
 
 
 router.post('/authenticate', async (req, res) => {

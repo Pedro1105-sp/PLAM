@@ -5,7 +5,7 @@ const TurmaController = require("./controller/TurmaController");
 const bodyParser = require("body-parser");
 const app = express();
 //const { rulesToMonitor } = require("nodemon/lib/monitor/match");
-const session = require('express-session');
+
 // const searchStudent = require("js/aluno");
 
 const axios = require('axios').default;
@@ -14,11 +14,6 @@ const axios = require('axios').default;
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

@@ -45,12 +45,12 @@ Turma.hasMany(Aluno, {
 
 /* Criptografando senha antes de salvar  */
 
-Aluno.addHook('beforeSave', async next => {
-    const hash = await bcrypt.hash(Aluno.SENHA_ALUNO, 10);
-    Aluno.SENHA_ALUNO = hash;
+// Aluno.addHook('beforeSave', async next => {
+//     const hash = await bcrypt.hash(Aluno.SENHA_ALUNO, 10);
+//     Aluno.SENHA_ALUNO = hash;
 
-    next();
-});
+//     next();
+// });
 
 
 //Aluno.sync({force:true});
