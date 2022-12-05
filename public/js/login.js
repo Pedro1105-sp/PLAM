@@ -32,4 +32,4 @@ function iniciaModal (modalID) {
 //   const iniciarChamada = document.querySelector('.forgot-password');
 //   iniciarChamada.addEventListener('click', () => iniciaModal('modal-password'));
 
-iniciaModal('modal-password');
+// iniciaModal('modal-password');

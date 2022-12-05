@@ -192,7 +192,21 @@ h1{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  
+  overflow-y: scroll;
+
+  height: 65vh;
+}
+
+
+.include::-webkit-scrollbar {
+  width: 0.5rem;
+  border: none;
+}
+
+.include::-webkit-scrollbar-thumb {
+  width: 0.8rem;
+  background-color: var(--background);
+  border-radius: 1.2rem;
 }
 
 .include_student{

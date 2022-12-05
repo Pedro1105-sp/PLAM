@@ -2,6 +2,7 @@ const express = require("express");
 const alunoController = require("./controller/AlunoController");
 const cursoController = require("./controller/CursoController");
 const TurmaController = require("./controller/TurmaController");
+
 const bodyParser = require("body-parser");
 const app = express();
 //const { rulesToMonitor } = require("nodemon/lib/monitor/match");

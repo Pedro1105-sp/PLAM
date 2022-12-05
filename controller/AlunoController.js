@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const session = require('express-session');
 const router = express.Router();
+const connection = require("../database/database");
 
 const modelAluno = require("../model/AlunoModel");
 
@@ -99,22 +100,23 @@ router.post("/inserirAluno", async(req, res)=>{
 });
 
 router.get("/login", (req, res)=>{
-
+    if(req.session.RM){
+        res.render('index')
+    }
     res.render('login')
 
 });
-
 
 router.post("/login", async(req, res)=>{
     let {RM, SENHA_ALUNO} = req.body
     const usuario = await modelAluno.findOne({
         attribites: ["RM", "NOME", "E-MAIL", "SENHA"],
-        where:{RM}
+        where:{RM, SENHA_ALUNO}
     });
 
     if(!usuario){
         console.log(RM)
-    return res.send({mensagem: "Usuário ou senha incorretos RM!!"})
+        return res.send({mensagem: "Usuário ou senha incorretos!!"})
     }
 
     bcrypt.compare(SENHA_ALUNO, usuario.SENHA_ALUNO, (err, result)=>{
@@ -129,12 +131,12 @@ router.post("/login", async(req, res)=>{
         //     }
         //  )
             return res.redirect(
-                ('http://localhost:8070/listagem')
+                ('http://localhost:8070/home')
             )
         }
     })   
     
-})
+});
 
 router.put("/alterarAluno", async(req, res)=>{
     // RECEBER DADOS

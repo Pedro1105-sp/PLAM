@@ -41,11 +41,11 @@
             <button class="iniciar" type="submit">Clique aqui para adicionar um novo aluno!</button>
         </div>
 
-        <div class="add">
+        <!-- <div class="add">
           <div class="add-student">
               <i class='bx bx-message-square-add'></i>
               <button class="iniciar" type="submit">Clique aqui para adicionar um novo professor!</button>
-        </div>
+        </div> -->
 
     </div>
 
@@ -53,7 +53,7 @@
       <div class="modal">
           <button class="fechar">x</button>
 
-          <form action="http://localhost:3000/inserirAluno" method="post" class="include">
+          <form action="http://localhost:8070/inserirAluno" method="post" class="include">
 
             <h1>Preencha os campos abaixo para adicionar um novo aluno!</h1>
 
@@ -75,11 +75,24 @@
 
               <div class="include_student">
                 <label for="TEL_ALUNO">Telefone:</label>
-                <input type="text" name="tel_aluno" id="telefone" maxlength="16">
+                <input type="tel" name="tel_aluno" id="telefone" maxlength="16">
               </div>
 
-
+              <div class="include_student">
+                <label for="email_aluno">E-mail:</label>
+                <input type="email" name="email_aluno" id="email_aluno">
+              </div>
               
+              <div class="include_student">
+                <label for="senha_aluno">Senha:</label>
+                <input type="password" name="senha_aluno" id="senha_aluno" maxlength="16">
+              </div>
+              
+              <div class="include_student">
+                <label for="id_turma_aluno">Turma:</label>
+                <input type="number" name="id_turma_aluno" id="id_turma_aluno" maxlength="1">
+              </div>
+
               <button id="incluir" type="submit" >incluir</button>
 
           </form>

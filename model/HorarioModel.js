@@ -2,17 +2,12 @@ const Sequelize = require("sequelize");
 
 const connection = require("../database/database");
 
+const Curso = require('./CursoModel');
+
 const Horario = connection.define(
     "tb_horario_aulas",
     {
-        DIA:{
-            type: Sequelize.INTEGER(4),
-            allowNull: false
-        },
-        STATUS_AULA:{
-            type: Sequelize.INTEGER(11),
-            allowNull: false
-        }
+
     }
 );
 
@@ -21,6 +16,6 @@ const Horario = connection.define(
 //   });
 
 
-// Aula.sync({force:true});
+// Horario.sync({force:true});
 
 module.exports = Turma;
