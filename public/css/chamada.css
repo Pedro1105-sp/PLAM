@@ -4,6 +4,8 @@
   justify-items: center;
   align-items: center;
   padding: 3rem 0;
+
+  margin-bottom: 7rem;
 }
 
 .list_dropdown {
@@ -106,7 +108,7 @@
   position: absolute;
   overflow-y: scroll;
   font-size: 1.3rem;
-  width: 34%;
+  width: 28%;
   height: 13rem;
   border-radius: 1.2rem;
   background-color: #F1F3F4;
@@ -147,7 +149,7 @@ h2 {
 
 .student {
   width: 87vw;
-  margin: 0 15rem;
+  margin: 0 13rem;
 }
 
 .header-list {
@@ -169,17 +171,80 @@ h2 {
 }
 
 .student-list {
+
   width: 87vw;
   height: 79vh;
   background-color: var(--blue-light);
   border-radius: 0 0 1.2rem 1.2rem;
   box-shadow: 1px 1px 10px 0px #00000040;
+  padding: 3rem;
+}
+
+.student-list-container{
+  width: 100%;
+  height: 71vh;
+  overflow-y: scroll;
+}
+
+.student-list-container::-webkit-scrollbar {
+  width: 0.5rem;
+  border: none;
+}
+
+.student-list-container::-webkit-scrollbar-thumb {
+  width: 0.8rem;
+  background-color: var(--blue-dark);
+  border-radius: 1.2rem;
 }
 
 .boy-img {
-  padding: 0 47.5rem;
+  
   height: 75vh;
 }
+
+
+
+.day-student-container{
+  width: 100%;
+  height: 7rem;
+  background-color: var(--background);
+  border-radius: 1.0rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+}
+
+
+.day-student{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.day-student-date{
+  margin-bottom: 0.5rem;
+}
+
+.day-student-class{
+  font-size: 1.8rem;
+}
+
+.day-student-status{
+  font-size: 1.5rem;
+}
+
+.day-status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#trash{
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+
+
 
 .modal-container {
   width: 100vw;

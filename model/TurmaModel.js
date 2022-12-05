@@ -28,6 +28,6 @@ const Turma = connection.define(
 //   });
 
 
-//Turma.sync({force:true});
+// Turma.sync({force:true});
 
 module.exports = Turma;

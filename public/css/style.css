@@ -113,7 +113,7 @@ a .name_logo {
 /* ----- footer ------ */
 
 footer {
-  position: relative;
+  position: fixed;
   margin-top: 2rem;
   bottom: 0%;
   width: 96.4%;

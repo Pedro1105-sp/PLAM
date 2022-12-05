@@ -53,6 +53,6 @@ Turma.hasMany(Aluno, {
 // });
 
 
-//Aluno.sync({force:true});
+// Aluno.sync({force:true});
 
 module.exports = Aluno;

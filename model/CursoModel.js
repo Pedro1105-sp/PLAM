@@ -17,6 +17,6 @@ const Curso = connection.define(
     }
 );
 
-//Curso.sync({force:true});
+// Curso.sync({force:true});
 
 module.exports = Curso;

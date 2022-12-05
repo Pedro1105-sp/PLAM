@@ -13,11 +13,45 @@ router.use(session({
 }));
 
 
+router.get("/home", (req, res)=>{
+    modelAluno.findAll()
+        .then(
+            ()=>{
+                res.render('index')
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'Houve um erro ao selecionar os dados do aluno',
+                    erroBancoDados: erro
+                });
+            }
+        );
+});
+
 router.get("/chamada", (req, res)=>{
     modelAluno.findAll()
         .then(
             (alunos)=>{
                 res.render('chamada', {alunos : alunos})
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'Houve um erro ao selecionar os dados do aluno',
+                    erroBancoDados: erro
+                });
+            }
+        );
+});
+
+router.get("/aluno", (req, res)=>{
+    modelAluno.findAll()
+        .then(
+            (alunos)=>{
+                res.render('aluno', {alunos : alunos})
             }
         ).catch(
             (erro)=>{
@@ -75,9 +109,7 @@ router.post("/login", async(req, res)=>{
     let {RM, SENHA_ALUNO} = req.body
     const usuario = await modelAluno.findOne({
         attribites: ["RM", "NOME", "E-MAIL", "SENHA"],
-        where:{
-            RM
-        }
+        where:{RM}
     });
 
     if(!usuario){
@@ -96,11 +128,9 @@ router.post("/login", async(req, res)=>{
         //         expiresIn: "1h"
         //     }
         //  )
-         return res.send({
-            mensagem: "LOGADO",
-            RM: usuario.RM,
-            NM_ALUNO: usuario.NM_ALUNO
-         })
+            return res.redirect(
+                ('http://localhost:8070/listagem')
+            )
         }
     })   
     
