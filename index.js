@@ -2,6 +2,9 @@ const express = require("express");
 const alunoController = require("./controller/AlunoController");
 const cursoController = require("./controller/CursoController");
 const TurmaController = require("./controller/TurmaController");
+const AulaController = require("./controller/AulaController");
+const DiscProf = require("./controller/DisciplinaProfessorController");
+const HorarioAula = require("./controller/HorarioAulaController");
 
 const bodyParser = require("body-parser");
 const app = express();
@@ -23,6 +26,8 @@ app.use(express.text())
 app.use('/', alunoController);
 app.use('/', cursoController);
 app.use('/', TurmaController);
+app.use('/', DiscProf);
+app.use('/', HorarioAula);
 //const moment = require('moment');
 //const alunoController = require('./controller/AlunoController');
 

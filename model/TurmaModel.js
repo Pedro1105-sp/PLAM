@@ -23,9 +23,9 @@ const Turma = connection.define(
     }
 );
 
-// Curso.hasMany(Turma, {
-//     foreignKey: 'ID_CURSO_TURMA '
-//   });
+Curso.hasMany(Turma, {
+    foreignKey: 'ID_CURSO_TURMA'
+});
 
 
 // Turma.sync({force:true});

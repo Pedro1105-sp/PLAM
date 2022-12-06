@@ -31,22 +31,7 @@ router.get("/home", (req, res)=>{
         );
 });
 
-router.get("/chamada", (req, res)=>{
-    modelAluno.findAll()
-        .then(
-            (alunos)=>{
-                res.render('chamada', {alunos : alunos})
-            }
-        ).catch(
-            (erro)=>{
-                return res.status(400).json({
-                    erroStatus: true,
-                    erroMessagem: 'Houve um erro ao selecionar os dados do aluno',
-                    erroBancoDados: erro
-                });
-            }
-        );
-});
+
 
 router.get("/aluno", (req, res)=>{
     modelAluno.findAll()
@@ -99,6 +84,61 @@ router.post("/inserirAluno", async(req, res)=>{
     );
 });
 
+
+router.get("/chamada", (req, res)=>{
+    modelAluno.findAll()
+        .then(
+            (alunos)=>{
+                res.render('chamada', {alunos : alunos})
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'Houve um erro ao selecionar os dados do aluno',
+                    erroBancoDados: erro
+                });
+            }
+        );
+
+        
+});
+
+router.get("/inserirAluno", async(req, res)=>{
+    // RECEBER OS DADOS
+    let {RM, NM_ALUNO, CPF_ALUNO, TEL_ALUNO, EMAIL_ALUNO, ID_TURMA_ALUNO} = req.body;
+    let SENHA_ALUNO = await bcrypt.hash(req.body.SENHA_ALUNO, 8);
+
+    // GRAVAR DADOS
+    modelAluno.create(
+        {
+            RM,
+            NM_ALUNO,
+            CPF_ALUNO,
+            TEL_ALUNO,
+            EMAIL_ALUNO,
+            SENHA_ALUNO,
+            ID_TURMA_ALUNO
+        }
+    ).then(
+        ()=>{
+            return res.status(201).json({
+                erroStatus: false,
+                menssagemStatus: "Aluno inserida com sucesso!!"
+            });
+        }
+    ).catch(
+        (erro)=>{
+            return res.status(400).json({
+                erroStatus: true,
+                menssagemStatus: "Erro ao inserir aluno!!",
+                erroBancoDados: erro
+            });
+        }
+    );
+});
+
+
 router.get("/login", (req, res)=>{
     if(req.session.RM){
         res.render('index')
@@ -116,7 +156,8 @@ router.post("/login", async(req, res)=>{
 
     if(!usuario){
         console.log(RM)
-        return res.send({mensagem: "Usuário ou senha incorretos!!"})
+        res.send({mensagem: "Usuário ou senha incorretos!!"})
+
     }
 
     bcrypt.compare(SENHA_ALUNO, usuario.SENHA_ALUNO, (err, result)=>{
@@ -167,9 +208,38 @@ router.put("/alterarAluno", async(req, res)=>{
                 menssagemStatus: "Erro ao alterar os dados do aluno!!",
                 erroBancoDados: erro
             });
+        }
+    );
+});
+
+router.put("/alterarSenha", async(req, res)=>{
+    // RECEBER DADOS
+    let {RM} = req.body;
+    let SENHA_ALUNO = await bcrypt.hash(req.body.SENHA_ALUNO, 8);
+
+    // ALTERAR DADOS
+    modelAluno.update(
+        {
+            RM, SENHA_ALUNO
+
+        },
+        {where:{RM}}
+    ).then(()=>{
+        return res.status(200).json({
+            erroStatus: false,
+            menssagemStatus: "Dados do aluno alterado com sucesso!!"
+        });
+    }).catch(
+        (erro)=>{
+            return res.status(400).json({
+                erroStatus: true,
+                menssagemStatus: "Erro ao alterar os dados do aluno!!",
+                erroBancoDados: erro
+            });
         }
     );
 });
+
 
 
 router.post('/authenticate', async (req, res) => {
@@ -188,18 +258,6 @@ router.post('/authenticate', async (req, res) => {
 
     res.send({user})
  })
-
-
-// router.post("/teste", async(req, res)=>{
-//     const user = await modelAluno.findOne({
-//         where:{RM: req.body, SENHA_ALUNO: req.body}
-//     });
-//     if(user === null){
-//         res.send(JSON.stringify("error"))
-//     } else{
-//         res.send(user)
-//     }
-// })
 
 
 router.delete("/excluirAluno/:id", (req, res)=>{

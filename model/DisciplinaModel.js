@@ -19,4 +19,4 @@ const Disciplina = connection.define(
 
 // Disciplina.sync({force:true});
 
-module.exports = Turma;
+module.exports = Disciplina;
